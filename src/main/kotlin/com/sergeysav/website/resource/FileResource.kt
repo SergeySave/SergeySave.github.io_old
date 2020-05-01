@@ -1,5 +1,6 @@
 package com.sergeysav.website.resource
 
+import com.sergeysav.website.WebsiteGenerationContext
 import java.nio.file.FileSystems
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
@@ -19,14 +20,14 @@ class FileResource(
     }
 
     override fun doOutput() {
-        Files.createDirectories(FileSystems.getDefault().getPath("docs/$absoluteOutputPath").parent)
+        Files.createDirectories(FileSystems.getDefault().getPath("${WebsiteGenerationContext.generateInto}/$absoluteOutputPath").parent)
 
         if (Files.exists(FileSystems.getDefault().getPath("src/main/resources/$inputResourcePath"))) {
             println("FileResource: Outputting $inputResourcePath to $absoluteOutputPath")
 
             Files.copy(
                 FileSystems.getDefault().getPath("src/main/resources/$inputResourcePath"),
-                FileSystems.getDefault().getPath("docs/$absoluteOutputPath"),
+                FileSystems.getDefault().getPath("${WebsiteGenerationContext.generateInto}/$absoluteOutputPath"),
                 StandardCopyOption.REPLACE_EXISTING
             )
         } else {

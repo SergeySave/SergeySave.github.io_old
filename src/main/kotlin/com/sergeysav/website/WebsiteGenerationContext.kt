@@ -18,6 +18,7 @@ import kotlin.collections.HashMap
  */
 object WebsiteGenerationContext {
 
+    var generateInto: String = "../SergeySave.github.io/"
     var pathRelativeTo: String = ""
 
     private val resources = mutableMapOf<String, Resource>()
@@ -25,13 +26,17 @@ object WebsiteGenerationContext {
 
     fun initialize() {
         println("Clearing Output Folder")
-        val docsFolder = FileSystems.getDefault().getPath("docs")
+        val docsFolder = FileSystems.getDefault().getPath(generateInto)
         Files.walk(docsFolder).use { walk ->
             walk.sorted(Comparator.reverseOrder())
                 .map { obj: Path -> obj.toFile() }
-                .forEach { obj: File -> obj.delete() }
+                .forEach { obj: File ->
+                    if (!(obj.path.contains("/.git/?".toRegex()) || obj.path == generateInto || obj.path.endsWith("CNAME"))) {
+                        obj.delete()
+                    }
+                }
         }
-        Files.createDirectory(docsFolder)
+//        Files.createDirectory(docsFolder)
         resources.clear()
     }
 

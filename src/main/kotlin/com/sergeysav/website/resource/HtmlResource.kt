@@ -1,5 +1,6 @@
 package com.sergeysav.website.resource
 
+import com.sergeysav.website.WebsiteGenerationContext
 import com.sergeysav.website.pages.WebPage
 import kotlinx.html.html
 import kotlinx.html.stream.appendHTML
@@ -20,9 +21,9 @@ class HtmlResource(override val absoluteOutputPath: String, private val page: We
     override fun doOutput() {
         println("HTMLResource: Outputting to $absoluteOutputPath")
 
-        Files.createDirectories(FileSystems.getDefault().getPath("docs/$absoluteOutputPath").parent)
+        Files.createDirectories(FileSystems.getDefault().getPath("${WebsiteGenerationContext.generateInto}/$absoluteOutputPath").parent)
 
-        val output = Files.newBufferedWriter(FileSystems.getDefault().getPath("docs/$absoluteOutputPath"))
+        val output = Files.newBufferedWriter(FileSystems.getDefault().getPath("${WebsiteGenerationContext.generateInto}/$absoluteOutputPath"))
 
         output.append("<!DOCTYPE html>")
         output.appendHTML().html {
