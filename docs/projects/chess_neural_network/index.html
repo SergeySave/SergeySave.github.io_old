@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Chess Neural Network</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+  </head>
+  <body class="pushable">
+    <div class="ui large top fixed hidden menu">
+      <div class="ui container"><a class="item " href="../../index.html">About Me</a>
+        <div class="ui dropdown item">Projects<i class="ui dropdown icon"></i>
+          <div class="menu"><a class="item " href="../index.html">Overview</a><a class="item " href="../rbmc/index.html">Mastering Reconnaissance Blind Chess with Reinforcement Learning</a><a class="item " href="../algorithm_visualizer/index.html">Algorithm Visualizer</a><a class="item " href="../space_game/index.html">Space RTS Game</a><a class="item active" href="index.html">Chess Neural Network</a><a class="item " href="../planet_renderer/index.html">Planet Renderer</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="ui vertical inverted sidebar menu left"><a class="item " href="../../index.html">About Me</a>
+      <div class="ui dropdown item">Projects<i class="ui dropdown icon"></i>
+        <div class="menu"><a class="item " href="../index.html">Overview</a><a class="item " href="../rbmc/index.html">Mastering Reconnaissance Blind Chess with Reinforcement Learning</a><a class="item " href="../algorithm_visualizer/index.html">Algorithm Visualizer</a><a class="item " href="../space_game/index.html">Space RTS Game</a><a class="item active" href="index.html">Chess Neural Network</a><a class="item " href="../planet_renderer/index.html">Planet Renderer</a></div>
+      </div>
+    </div>
+    <script type="text/javascript">$(document)
+.ready(function () {
+$('.masthead').visibility({
+once: false,
+onBottomPassed: function () {
+$('.fixed.menu').transition('fade in');
+},
+onBottomPassedReverse: function () {
+$('.fixed.menu').transition('fade out');
+}
+});
+$('.ui.sidebar').sidebar('attach events', '.toc.item');
+});</script>
+    <div class="pusher">
+      <div class="ui inverted vertical masthead center aligned segment">
+        <div class="ui container">
+          <div class="ui large secondary inverted pointing menu"><a class="item " href="../../index.html">About Me</a>
+            <div class="ui dropdown item">Projects<i class="ui dropdown icon"></i>
+              <div class="menu"><a class="item " href="../index.html">Overview</a><a class="item " href="../rbmc/index.html">Mastering Reconnaissance Blind Chess with Reinforcement Learning</a><a class="item " href="../algorithm_visualizer/index.html">Algorithm Visualizer</a><a class="item " href="../space_game/index.html">Space RTS Game</a><a class="item active" href="index.html">Chess Neural Network</a><a class="item " href="../planet_renderer/index.html">Planet Renderer</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="ui container text">
+          <h1 class="ui inverted header topMargin">Chess Neural Network</h1>
+          <h2>An Artificial Neural Network written from scratch and taught to play chess</h2>
+        </div>
+      </div>
+      <div class="ui container basic text segment">
+        <div class="ui medium header">September 2016 - June 2017</div>
+        <p style="text-indent: 2.0em;">Over the course of my senior year of high school, I performed an Independent Study on Artificial
+Intelligence using Neural Networks where I wrote an deeply-connected feed-forward Artificial
+Neural Network from scratch in Java and I taught it to play chess. This was a tremendous
+undertaking.</p>
+        <div class="activating element" data-position="top right" data-content="A visual representation of the neural network's output on an empty chess board. In this stage of its training the AI thinks that the purple tile should be moved to the light blue tile. With enough training the AI will start to make legal moves."><img class="ui medium right floated image" src="icon.png"></div>
+        <p style="text-indent: 2.0em;">I started off this project by researching how Artificial Neural Networks worked and were
+written. I learned of the underlying math and calculations that occurred in order to make a 
+computer able to learn. I read academic research papers, programmer blog posts, and 
+wikipedia articles all detailing the underlying processes allowing computers to simulate 
+intelligence. After over a month of research, I believed that I knew enough and that I had 
+figured out enough of the math in order to write my own Neural Network. This simple network 
+was just a starting point for me to learn how to go about writing a Neural Network and for 
+me to play around with some of the parameters that I would later have to spend a lot of 
+time fine-tuning. I taught this first simple network the<a href="https://en.wikipedia.org/wiki/Exclusive_or">XOR function</a><br><br>After it was able to learn this function with a fairly high success rate (90% of random starts),
+I decided that it was time to switch to a more complex task: Chess. While I recognized that this
+would be an immense challenge and I even doubted my own ability to be able to write a neural network
+that would be able to do anything from my fairly surface-level understanding of all of the concepts
+behind all that I was doing, I was determined to take my failures and convert them to successes,
+to increase my understanding and learn how to write a neural network that I never thought I could.</p>
+        <div class="activating element" data-position="top right" data-content="A graph of the neural network's error as it relates to a given input into the network. A single unit along the x axis represents a single iteration of the backpropagation algorithm. The y axis is the squared error for the iteration of the algorithm."><img class="ui medium right floated image" src="output.png"></div>
+        <p style="text-indent: 2.0em;">So next, I downloaded 18,313 games of chess from 12 different chess masters in order to use to
+train my network. After writing the code that I'd need to be able to read these chess trascripts and
+convert them into a form that would be usable for my neural network, I reworked my code in order
+to be able to handle and better process this tremendous volume of data. Over the course of the rest
+of the school year, I worked on improving my algorithm and changing the size of the neural network.
+I spent it fixing bugs that I kepts discovering and optimizing the methods that I was using to
+teach the Neural Network chess. The end of the year came before it was able to fully learn to play
+chess. While it never truly learned to play chess it did manage to memorize the first 7 moves of a
+couple of different openings. It was also able to change which opening it would use depending on what
+moves its opponent made. Then I presented my results to a related class, in my case the AP Computer
+Science A class, and I called it a year. I do still plan on returning to this project. Probably
+using a library, such as TensorFlow, just to see if it was my data or my algorithm that were at
+fault for this result.</p>
+      </div>
+      <div class="ui inverted vertical footer segment">
+        <div class="ui container">
+          <div class="ui stackable inverted divided equal height stackable grid">
+            <div class="three wide two wide large screen column">
+              <h4 class="ui inverted header">About</h4>
+              <div class="ui two column inverted grid"><a href="https://github.com/SergeySave"><img class="ui mini image" src="../../icons/github_inverted.png" alt="GitHub Logo" style="padding: 5px 0px 5px 0px;"></a><a href="mailto:sergeysav.nn@gatech.edu"><img class="ui mini image" src="../../icons/email_inverted.png" alt="Email Icon" style="padding: 5px 0px 5px 0px;"></a><a href="https://www.linkedin.com/in/sergeysav"><img class="ui mini image" src="../../icons/linkedin_inverted.png" alt="LinkedIn Logo" style="padding: 5px 0px 5px 0px;"></a><a href="/Resume.pdf"><img class="ui mini image" src="../../icons/resume_inverted.png" alt="Resume Icon" style="padding: 5px 0px 5px 0px;"></a></div>
+            </div>
+            <div class="three wide column">
+              <h4 class="ui inverted header">Links</h4>
+              <div class="ui inverted link list"><a class="item" href="https://github.com/SergeySave/NeuralNetwork">Source Code</a></div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript">$('.ui.dropdown').dropdown();
+$('.activating.element').popup();</script>
+      </div>
+    </div>
+  </body>
+</html>

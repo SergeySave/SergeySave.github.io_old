@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Space RTS Game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+  </head>
+  <body class="pushable">
+    <div class="ui large top fixed hidden menu">
+      <div class="ui container"><a class="item " href="../../index.html">About Me</a>
+        <div class="ui dropdown item">Projects<i class="ui dropdown icon"></i>
+          <div class="menu"><a class="item " href="../index.html">Overview</a><a class="item " href="../rbmc/index.html">Mastering Reconnaissance Blind Chess with Reinforcement Learning</a><a class="item " href="../algorithm_visualizer/index.html">Algorithm Visualizer</a><a class="item active" href="index.html">Space RTS Game</a><a class="item " href="../chess_neural_network/index.html">Chess Neural Network</a><a class="item " href="../planet_renderer/index.html">Planet Renderer</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="ui vertical inverted sidebar menu left"><a class="item " href="../../index.html">About Me</a>
+      <div class="ui dropdown item">Projects<i class="ui dropdown icon"></i>
+        <div class="menu"><a class="item " href="../index.html">Overview</a><a class="item " href="../rbmc/index.html">Mastering Reconnaissance Blind Chess with Reinforcement Learning</a><a class="item " href="../algorithm_visualizer/index.html">Algorithm Visualizer</a><a class="item active" href="index.html">Space RTS Game</a><a class="item " href="../chess_neural_network/index.html">Chess Neural Network</a><a class="item " href="../planet_renderer/index.html">Planet Renderer</a></div>
+      </div>
+    </div>
+    <script type="text/javascript">$(document)
+.ready(function () {
+$('.masthead').visibility({
+once: false,
+onBottomPassed: function () {
+$('.fixed.menu').transition('fade in');
+},
+onBottomPassedReverse: function () {
+$('.fixed.menu').transition('fade out');
+}
+});
+$('.ui.sidebar').sidebar('attach events', '.toc.item');
+});</script>
+    <div class="pusher">
+      <div class="ui inverted vertical masthead center aligned segment">
+        <div class="ui container">
+          <div class="ui large secondary inverted pointing menu"><a class="item " href="../../index.html">About Me</a>
+            <div class="ui dropdown item">Projects<i class="ui dropdown icon"></i>
+              <div class="menu"><a class="item " href="../index.html">Overview</a><a class="item " href="../rbmc/index.html">Mastering Reconnaissance Blind Chess with Reinforcement Learning</a><a class="item " href="../algorithm_visualizer/index.html">Algorithm Visualizer</a><a class="item active" href="index.html">Space RTS Game</a><a class="item " href="../chess_neural_network/index.html">Chess Neural Network</a><a class="item " href="../planet_renderer/index.html">Planet Renderer</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="ui container text">
+          <h1 class="ui inverted header topMargin">Space RTS Game</h1>
+          <h2>A 2D real time strategy game set in space</h2>
+        </div>
+      </div>
+      <div class="ui container basic text segment">
+        <div class="ui medium header">June 2017 - August 2017</div>
+        <p style="text-indent: 2.0em;">The summer after my senior year of high school, I began working on a top-down real-time-strategy
+game set in space. While I do have an interest in game design, my game related projects are mostly
+fun ways that I get myself to learn new technologies and new tools. In this project, for example, I
+focused on learning how to use the ECS (entity-component-system) architecture rather than an OOP
+(object-oriented programming) architecture. I did this because I had read that ECS architectures
+were common in game development because the focus on composition rather than inheritance allows for
+code reuse and higher levels of abstraction than a traditional OOP approach would have. While it
+certainly took some time to get used to thinking in terms of components and entities rather than
+interfaces, classes, and inheritance, I believe that it was a tremendous learning experience.</p>
+        <p style="text-indent: 2.0em;">Another one of my goals for this project was to start branching out into other languages rather than
+always using Java. So part way through this project, I had started writing new classes in
+&lt;a href=&quot;http://kotlinlang.org/&quot;&gt;Kotlin&lt;/a&gt; rather than in Java. Since Kotlin inter-operates
+almost seamlessly with Java code, I was able to gradually switch over as I was learned it. This also
+brought about a switch in my IDE and my toolset. Previously I had been using Eclipse as my IDE and I
+had been using SmartGit as my git client, but after discovering that Eclipse's Kotlin plugin was
+extremely bad at helping me write code on Kotlin, I switched to use IntelliJ IDEA CE. As I switched
+my IDE, I also decided to start using command line git instead of a git client.</p>
+        <p style="text-indent: 2.0em;">My final large goal for this project was to make every single level completely data-driven. I
+accomplished this goal by creating level files such that I was able to define every part of the
+level. This has culminated in a level file which is in essence a zip or archive file containing a
+JSON metadata file as well as all the assets, such as images, sounds, and even lua code files. This
+metadata file is used to define how the level starts when it is initially loaded, main ship classes
+that can exist, commands that the user can issue to his or her ships, and lua event listeners.
+Any lua code required by this file for events, commands, or simply to check whether a command is
+able to be used or not can be linked to be loaded from a contained lua file, rather than being
+written directly in the JSON file.</p>
+        <p style="text-indent: 2.0em;">While I have already accomplished these goals and my game is feature complete, I am still missing
+all of the levels and story that I would need to make in order for this game to truly be complete.
+As I don't have nearly as much time to work on this as I had over the summer (and I personally don't
+like making the levels as much as I do the engine), I am unsure whether I will complete this game or
+not. The name &quot;Space Game&quot; was actually just a temporary name that I was going to change when I had
+completed the game.</p>
+        <p style="text-indent: 2.0em;">Since August 2017, I have not worked on this nearly as much as I had wanted to. I had started to work
+on a level editor built into it, but it never really got off the ground and the project stalled. While
+I do believe this project is still not complete, I have moved away from it as classes and newer projects
+had come up.</p>
+      </div>
+      <div class="ui inverted vertical footer segment">
+        <div class="ui container">
+          <div class="ui stackable inverted divided equal height stackable grid">
+            <div class="three wide two wide large screen column">
+              <h4 class="ui inverted header">About</h4>
+              <div class="ui two column inverted grid"><a href="https://github.com/SergeySave"><img class="ui mini image" src="../../icons/github_inverted.png" alt="GitHub Logo" style="padding: 5px 0px 5px 0px;"></a><a href="mailto:sergeysav.nn@gatech.edu"><img class="ui mini image" src="../../icons/email_inverted.png" alt="Email Icon" style="padding: 5px 0px 5px 0px;"></a><a href="https://www.linkedin.com/in/sergeysav"><img class="ui mini image" src="../../icons/linkedin_inverted.png" alt="LinkedIn Logo" style="padding: 5px 0px 5px 0px;"></a><a href="/Resume.pdf"><img class="ui mini image" src="../../icons/resume_inverted.png" alt="Resume Icon" style="padding: 5px 0px 5px 0px;"></a></div>
+            </div>
+            <div class="three wide column">
+              <h4 class="ui inverted header">Links</h4>
+              <div class="ui inverted link list"><a class="item" href="https://github.com/SergeySave/SpaceGame">Source Code</a></div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript">$('.ui.dropdown').dropdown();
+$('.activating.element').popup();</script>
+      </div>
+    </div>
+  </body>
+</html>
