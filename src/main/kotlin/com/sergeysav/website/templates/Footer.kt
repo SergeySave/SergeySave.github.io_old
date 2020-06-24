@@ -6,6 +6,7 @@ import kotlinx.html.ScriptType
 import kotlinx.html.a
 import kotlinx.html.div
 import kotlinx.html.h4
+import kotlinx.html.i
 import kotlinx.html.img
 import kotlinx.html.script
 import kotlinx.html.style
@@ -26,34 +27,26 @@ fun DIV.webFooter(inner: DIV.()->Unit = {}) {
                     div(classes = "ui two column inverted grid") {
                         a {
                             href = "https://github.com/SergeySave"
-                            img(classes = "ui mini image") {
-                                src = WebsiteGenerationContext.getResource("file://icons/github_inverted.png").relativeOutputPath()
-                                alt = "GitHub Logo"
-                                style = "padding: 5px 0px 5px 0px;"
+                            i(classes = "github big icon") {
+                                style = "color: white; margin: 0.5em 0 0.5em 0;"
                             }
                         }
                         a {
-                            href = "mailto:sergeysav.nn@gatech.edu"
-                            img(classes = "ui mini image") {
-                                src = WebsiteGenerationContext.getResource("file://icons/email_inverted.png").relativeOutputPath()
-                                alt = "Email Icon"
-                                style = "padding: 5px 0px 5px 0px;"
+                            href = "mailto:sergey@sergeysav.com"
+                            i(classes = "envelope outline big icon") {
+                                style = "color: white; margin: 0.5em 0 0.5em 0;"
                             }
                         }
                         a {
                             href = "https://www.linkedin.com/in/sergeysav"
-                            img(classes = "ui mini image") {
-                                src = WebsiteGenerationContext.getResource("file://icons/linkedin_inverted.png").relativeOutputPath()
-                                alt = "LinkedIn Logo"
-                                style = "padding: 5px 0px 5px 0px;"
+                            i(classes = "linkedin big icon") {
+                                style = "color: white; margin: 0.5em 0 0.5em 0;"
                             }
                         }
                         a {
                             href = "/Resume.pdf"
-                            img(classes = "ui mini image") {
-                                src = WebsiteGenerationContext.getResource("file://icons/resume_inverted.png").relativeOutputPath()
-                                alt = "Resume Icon"
-                                style = "padding: 5px 0px 5px 0px;"
+                            i(classes = "file alternate outline big icon") {
+                                style = "color: white; margin: 0.5em 0 0.5em 0;"
                             }
                         }
                     }

@@ -11,7 +11,9 @@ import kotlinx.html.body
 import kotlinx.html.div
 import kotlinx.html.i
 import kotlinx.html.id
+import kotlinx.html.img
 import kotlinx.html.p
+import kotlinx.html.style
 
 /**
  * @author sergeys
@@ -24,18 +26,45 @@ object AboutMePage : WebPage() {
     override val name: String = "About Me"
 
     override fun HTML.create() {
-        header("Home")
+        header("About Me")
 
         body(classes = "pushable") {
             mainNavbar()
 
             div(classes = "pusher") {
-                mastTitleImage("Sergey Savelyev", "Computer Science Masters Student", WebsiteGenerationContext.getResource("file://images/me.jpg")) {
-                    a {
-                        href = "#contact_me"
-                        div(classes = "ui huge primary button") {
-                            +"Contact Me"
-                            i(classes = "right arrow icon")
+                mastTitleImage("Sergey Savelyev", "Georgia Tech CS Masters Student", WebsiteGenerationContext.getResource("file://images/me.jpg")) {
+//                    a {
+//                        href = "#contact_me"
+//                        div(classes = "ui huge primary button") {
+//                            +"Contact Me"
+//                            i(classes = "right arrow icon")
+//                        }
+//                    }
+
+                    div() {
+                        a {
+                            href = "https://github.com/SergeySave"
+                            i(classes = "github big icon") {
+                                style = "color: white;"
+                            }
+                        }
+                        a {
+                            href = "mailto:sergey@sergeysav.com"
+                            i(classes = "envelope outline big icon") {
+                                style = "color: white;"
+                            }
+                        }
+                        a {
+                            href = "https://www.linkedin.com/in/sergeysav"
+                            i(classes = "linkedin big icon") {
+                                style = "color: white;"
+                            }
+                        }
+                        a {
+                            href = "/Resume.pdf"
+                            i(classes = "file alternate outline big icon") {
+                                style = "color: white;"
+                            }
                         }
                     }
                 }
@@ -90,8 +119,8 @@ object AboutMePage : WebPage() {
                                 p {
                                     +"Feel free to send me an email at "
                                     a {
-                                        href = "mailto:ss@sergeysav.com"
-                                        +"ss@sergeysav.com"
+                                        href = "mailto:sergey@sergeysav.com"
+                                        +"sergey@sergeysav.com"
                                     }
                                     +"""
                                           with questions regarding my projects or possible opportunities such as project

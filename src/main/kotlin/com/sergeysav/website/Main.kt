@@ -11,13 +11,13 @@ import com.sergeysav.website.pages.projects.SpaceGameProjectPage
 import com.sergeysav.website.resource.OutputMappingResource
 import java.nio.file.FileSystems
 import java.nio.file.Files
+import java.util.*
 
 /**
  * @author sergeys
  */
 fun main() {
-
-    WebsiteGenerationContext.initialize()
+    WebsiteGenerationContext.initialize(System.getenv("GEN_INTO"))
 
     WebsiteGenerationContext.addResource("file://css.css",
         OutputMappingResource("css/main.css")
@@ -36,16 +36,4 @@ fun main() {
     WebsiteGenerationContext.addHtmlPage("projects/planet_renderer/index.html", PlanetRendererProjectPage)
 
     WebsiteGenerationContext.output()
-
-    val builder = ProcessBuilder("git", "add", ".")
-    builder.directory(FileSystems.getDefault().getPath(WebsiteGenerationContext.generateInto).toFile())
-    builder.redirectOutput(ProcessBuilder.Redirect.INHERIT)
-    builder.redirectError(ProcessBuilder.Redirect.INHERIT)
-    builder.start().waitFor()
-
-    builder.command("git", "commit", "-m", "Website Updated by Generator")
-    builder.start().waitFor()
-
-    builder.command("git", "push")
-    builder.start().waitFor()
 }
