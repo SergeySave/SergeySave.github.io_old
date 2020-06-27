@@ -14,12 +14,15 @@ fun DIV.navbarContents() {
                 +page.name
                 i(classes = "ui dropdown icon")
                 div(classes = "menu") {
+                    this.style = "max-width: 60vw;"
                     a(classes = "item ${if (page == Pages.currentPage) "active" else ""}") {
+                        this.style = "overflow: hidden; text-overflow: ellipsis;"
                         href = WebsiteGenerationContext.getResource("page://${page.baseName}").relativeOutputPath()
                         +"Overview"
                     }
                     for (subPage in page.subPages) {
                         a(classes = "item ${if (subPage == Pages.currentPage) "active" else ""}") {
+                            this.style = "overflow: hidden; text-overflow: ellipsis;"
                             href = WebsiteGenerationContext.getResource("page://${subPage.baseName}").relativeOutputPath()
                             +subPage.name
                         }

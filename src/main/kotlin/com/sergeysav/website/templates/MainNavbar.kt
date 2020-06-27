@@ -7,12 +7,12 @@ import kotlinx.html.*
  * @author sergeys
  */
 fun BODY.mainNavbar() {
-    div(classes = "ui large top fixed hidden menu") {
+    div(classes = "ui large top fixed hidden menu right") {
         div(classes = "ui container") {
             navbarContents()
         }
     }
-    div(classes = "ui vertical inverted sidebar menu left") {
+    div(classes = "ui vertical inverted sidebar menu right") {
         navbarContents()
     }
     script(type = ScriptType.textJavaScript) {
